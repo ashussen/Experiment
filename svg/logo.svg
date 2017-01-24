@@ -1,0 +1,24 @@
+  <svg id="dp_logo" xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 300 300">
+    <style>
+      .st0{fill:#fff}
+      #dp_logo .box,
+      #dp_logo .dash,
+      #dp_logo .text {
+       transition: transform 1s;
+        transform-origin: 50%;
+      }
+      #dp_logo:hover .box {
+        transform: rotate(45deg);
+        transform-origin: 50%;
+        transition: transform 1s;
+      }
+      #dp_logo:hover .dash,
+      #dp_logo:hover .text {
+        transform: translateX(45px);
+        transition: transform 1s;
+      }
+    </style>
+    <path class="st0 dash" d="M58.7 105.4H36.8V95.1h21.9v10.3z"/>
+     <path class="st0 box" d="M188.1 11.9v176.4H11.7V11.9h176.4M199.8.2H0V200h199.8V.2z"/>
+     <path class="st0 text" d="M78.3 55.9c0 14.8-9.6 23.4-25.9 23.4H36.9V32.5h15.4c16.2 0 26 8.6 26 23.4zM49 43.6v24.7h2.9c9.4 0 14-4.6 14-12.4 0-7.8-4.7-12.4-14-12.4H49zM72.9 136.3c0 9.9-7.6 15.5-16 15.5h-8.1v14.3H37.1l-.1-45.3 19.8-.1c8.4.1 16 5.7 16.1 15.6zm-24.2-5.4v10.8h7c3.1 0 5.4-1.8 5.3-5.4 0-3.4-2.2-5.4-5.4-5.4h-6.9z"/>
+  </svg>

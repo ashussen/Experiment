@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+      .fact-1 {
+        height: 100vh;
+        background: lightgrey;
+      }
+      .fact-1 .container.sticky {
+        position: fixed;
+        height: 250px;
+        width: 100%;
+        top: 0;
+        background: lightgrey;
+      }
+      .fact-1 .container.sticky .img-x {
+        position: absolute;
+      }
+      .fact-1 .img-x {
+        width: 250px;
+        height: 250px;
+        text-align: center;
+        position: fixed;
+        left: calc(50% - 125px);
+        top: calc(50% - 125px);
+      }
+      .fact-1 .img-x.stick-bot {
+        position: absolute;
+        top: calc(100% - 250px);
+
+      }
+      .fact-1 .grabbing-hands {
+        position: absolute;
+        bottom: -27px;
+        left: calc(50% - 127px);
+      }
+      .fact-1 .grabbing-hands img {
+        width: 50px;
+      }
+      .fact-1 .grabbing-hands .hand-right {
+        margin-left: 150px;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";}
+      .fact-2 {
+        background: darkgrey;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fact-1">
+      <div class="container">
+        <div class="img-x">
+          <strong style="font-size: 250px;">X</strong>
+        </div>
+        <div class="grabbing-hands">
+          <img class="hand-left" src="grabbing_hand.png" />
+          <img class="hand-right" src="grabbing_hand.png" />
+        </div>
+      </div>
+
+    </div>
+    <div class="fact-2">
+      <img src="sun.svg" />
+    </div>
+
+    <script>
+     var fact1Height = $('.fact-1').height();
+     var fact1ImgHeight = $('.fact-1 .img-x').height();
+     $(document).on('scroll', function() {
+       var scrollTop = $(document).scrollTop();
+       if(scrollTop > (fact1Height/2 - (fact1ImgHeight/2))) {
+         $('.fact-1 .img-x').addClass('stick-bot');
+       } else {
+         $('.fact-1 .img-x').removeClass('stick-bot');
+       }
+
+       if(scrollTop > (fact1Height - fact1ImgHeight)) {
+         $('.fact-1 .container').addClass('sticky');
+       } else {
+         $('.fact-1 .container').removeClass('sticky');
+       }
+       console.log("fact1: "+ fact1Height+" scrollTop: "+ scrollTop);
+     });
+    </script>
+  </body>
+</html>
